@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1.同步回调：立即执行，完全执行完了才结束，不会放入到回调的列队中
+        2.异步回调：不会立即执行，会放入到回调队列中将来执行
+        */
+
+        //1.同步回调函数
+        const arr = [1,2,3];
+        arr.forEach((item)=>{
+            console.log(item)
+        })
+        console.log('forEach()之后')
+        //forEach中的回调函数是同步回调函数
+
+        //2.异步回调函数
+        setTimeout(()=>{
+            console.log('timeout callback')
+        },0)
+        console.log('setTimeout()之后')
+        //setTime()中的回调函数是异步回调函数
+    </script>
+</body>
+</html>
