@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script src="./lib/promise.js"></script>
     <script>
-        new Promise((resolve,reject)=>{
-            resolve(1)  //value值为1
-            reject(2) // reason 值为2
-         })
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(1) //value值为1
+                // reject(2) // reason 值为2
+            },1000)
+        })
+        p.then(
+            value => {
+                console.log('onResolved',value)
+            },
+            reason => {
+                console.log("onRejected1()",reason)
+            }
+        )
+        p.then(
+            value => {
+                console.log('onResolved',value)
+            },
+            reason => {
+                console.log("onRejected1()",reason)
+            }
+        )
     </script>
 </body>
+
 </html>
