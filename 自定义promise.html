@@ -15,16 +15,16 @@
                 resolve(1) //value值为1
                 // reject(2) // reason 值为2
             },1000)
-        })
-        p.then(
+        }).then(
             value => {
-                console.log('onResolved',value)
+                return new Promise((resolve,rejected)=>{
+                    resolve(2)
+                })
             },
             reason => {
                 console.log("onRejected1()",reason)
             }
-        )
-        p.then(
+        ).then(
             value => {
                 console.log('onResolved',value)
             },
